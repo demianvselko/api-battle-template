@@ -1,0 +1,69 @@
+{
+  "name": "api-battle-template",
+  "version": "0.0.1",
+  "description": "Template base para microservicios de API Battle",
+  "author": "Demian Vselko",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main",
+    "start:dev": "nest start --watch",
+    "start:prod": "npm run start",
+    "lint": "eslint \"{src,test}/**/*.ts\" --max-warnings=0",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" || true",
+    "test": "jest -c jest.config.ts",
+    "test:cov": "jest -c jest.config.ts --coverage --all --passWithNoTests",
+    "test:watch": "jest --watch",
+    "docker:dev": "docker compose up --build",
+    "docker:rebuild": "docker compose build --no-cache && docker compose up",
+    "postinstall": "chmod +x .husky/* || true"
+  },
+  "dependencies": {
+    "@fastify/static": "^8.2.0",
+    "@nestjs/cache-manager": "^3.0.1",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-fastify": "^11.1.6",
+    "@nestjs/swagger": "^11.2.0",
+    "cache-manager": "^7.2.0",
+    "fastify": "^5.6.0",
+    "pino-http": "^10.5.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.35.0",
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.1",
+    "@types/cache-manager": "^4.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.10.7",
+    "@types/supertest": "^6.0.2",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "jest": "^30.0.0",
+    "lint-staged": "^16.1.6",
+    "pino-pretty": "^13.1.1",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.44.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+services:
+  service:
+    build: .
+    container_name: api-battle-service
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.docker
+    restart: unless-stopped

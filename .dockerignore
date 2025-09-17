@@ -1,0 +1,8 @@
+npm-debug.log
+.git
+coverage
+dist
+Dockerfile
+docker-compose.yml
+.github
+.husky

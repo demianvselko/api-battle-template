@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+.env.development
+.env.qa
+.env.uat
+.env.production
+.env.test
+.env.docker
+.env.local
