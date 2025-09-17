@@ -5,19 +5,19 @@ module.exports = {
             2,
             'always',
             [
-                'feat',     // nueva funcionalidad
-                'fix',      // bug fix
-                'hotfix',   // fix crítico en prod
-                'test',     // agregar o corregir tests
-                'docs',     // cambios en documentación
-                'chore',    // mantenimiento (deps, configs)
-                'refactor', // refactor sin cambiar comportamiento
-                'style',    // formato, puntos y comas, etc.
-                'ci',       // cambios en CI/CD
-                'perf'      // mejoras de performance
+                'feat',
+                'fix',
+                'hotfix',
+                'test',
+                'docs',
+                'chore',
+                'refactor',
+                'style',
+                'ci',
+                'perf'
             ]
         ],
-        'type-empty': [2, 'never'],
-        'subject-empty': [2, 'never'],
+        'type-empty': [2, 'never'],     // no permite commits sin tipo
+        'subject-empty': [2, 'never'],  // no permite commits sin mensaje después de `:`
     },
 };
