@@ -1,1 +1,3 @@
-npm test
+#!/bin/sh
+
+npx lint-staged
