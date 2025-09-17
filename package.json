@@ -13,11 +13,15 @@
     "lint": "eslint \"{src,test}/**/*.ts\" --max-warnings=0",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" || true",
     "test": "jest -c jest.config.ts",
+    "test:unit": "jest -c jest.config.ts --testPathPatterns=test/unit",
+    "test:integration": "jest -c jest.config.ts --testPathPatterns=test/integration",
+    "test:e2e": "jest -c jest.config.ts --testPathPatterns=test/e2e",
     "test:cov": "jest -c jest.config.ts --coverage --all --passWithNoTests",
     "test:watch": "jest --watch",
     "docker:dev": "docker compose up --build",
     "docker:rebuild": "docker compose build --no-cache && docker compose up",
-    "postinstall": "chmod +x .husky/* || true"
+    "postinstall": "chmod +x .husky/* || true",
+    "prepare": "husky"
   },
   "dependencies": {
     "@fastify/static": "^8.2.0",

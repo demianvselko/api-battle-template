@@ -1,3 +1,3 @@
 export enum HealthErrorMessages {
-    HEALTH_CHECK_FAILED = 'Health check failed',
+  HEALTH_CHECK_FAILED = 'Health check failed',
 }

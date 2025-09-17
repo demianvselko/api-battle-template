@@ -1,15 +1,18 @@
 import { ResponseInterceptor } from '@infrastructure/interceptors/response.interceptor';
-import { of } from 'rxjs';
+import { testInterceptor } from '../utils/interceptor-tester';
+import { ResponseFormat } from '@domain/types/Response-Format';
 
 describe('ResponseInterceptor', () => {
-    it('should wrap response with success, data and timestamp', (done) => {
-        const interceptor = new ResponseInterceptor();
-        const next = { handle: () => of({ test: true }) };
-        interceptor.intercept({} as any, next as any).subscribe((res) => {
-            expect(res.success).toBe(true);
-            expect(res.data).toEqual({ test: true });
-            expect(res.timestamp).toBeDefined();
-            done();
-        });
-    });
+  it('should wrap response with success, data and timestamp', async () => {
+    const interceptor = new ResponseInterceptor<{ test: boolean }>();
+
+    const result = await testInterceptor<
+      { test: boolean },
+      ResponseFormat<{ test: boolean }>
+    >(interceptor, { test: true });
+
+    expect(result.success).toBe(true);
+    expect(result.data).toEqual({ test: true });
+    expect(result.timestamp).toBeDefined();
+  });
 });

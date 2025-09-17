@@ -16,8 +16,6 @@ import { HealthModule } from '@infrastructure/modules/health/health.module';
     }),
     HealthModule,
   ],
-  providers: [
-    { provide: APP_INTERCEPTOR, useClass: CacheInterceptor },
-  ],
+  providers: [{ provide: APP_INTERCEPTOR, useClass: CacheInterceptor }],
 })
-export class AppModule { }
+export class AppModule {}
