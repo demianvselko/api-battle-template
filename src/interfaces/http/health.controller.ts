@@ -8,7 +8,7 @@ import { GlobalErrorMessages } from '@domain/errors/global-error-messages.enum';
 export class HealthController {
   private readonly logger = setupLogger('health');
 
-  constructor(private readonly healthService: HealthService) { }
+  constructor(private readonly healthService: HealthService) {}
 
   @Get()
   getHealth() {
@@ -17,7 +17,8 @@ export class HealthController {
     } catch (error) {
       this.logger.error(
         { err: error },
-        HealthErrorMessages.HEALTH_CHECK_FAILED || GlobalErrorMessages.UNEXPECTED_ERROR,
+        HealthErrorMessages.HEALTH_CHECK_FAILED ||
+          GlobalErrorMessages.UNEXPECTED_ERROR,
       );
 
       throw new InternalServerErrorException(
