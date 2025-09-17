@@ -10,6 +10,12 @@ export default [
   prettier,
   {
     files: ["src/**/*.ts", "test/**/*.ts"],
+    ignores: [
+      "dist/**",
+      "node_modules/**",
+      "commitlint.config.js",
+      "jest.config.*",
+    ],
     languageOptions: {
       parserOptions: {
         project: "./tsconfig.json",
